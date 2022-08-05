@@ -1,4 +1,5 @@
 const Kullanici = require("../models/kullaniciModel");
+const { getPostData } = require("../utils");
 
 async function getKullanicilar(req, res) {
   try {
@@ -27,9 +28,11 @@ async function getKullanici(req, res, id) {
 }
 async function createKullanici(req, res) {
   try {
+    const body = await getPostData(req);
+    const { isim, email } = JSON.parse(body);
     const kullanici = {
-      isim: "Test",
-      email: "test@gmail.com",
+      isim,
+      email,
     };
     const yeniKullanici = await Kullanici.create(kullanici);
     res.writeHead(201, { "Content-Type": "application/json" });
