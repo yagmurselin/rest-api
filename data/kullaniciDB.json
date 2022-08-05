@@ -1,1 +1,16 @@
-[{"id":"18cd8e8d-7ea1-4fb3-a386-71d48411c72b","isim":"ahmet","email":"esra@gmail.com"},{"id":"3954df74-682a-48b5-9767-b58209de2f2c","isim":"ahmet","email":"esra@gmail.com"}]
+[
+  { "id": "1", "isim": "Ali Osman Hazır", "email": "aos@gmail.com" },
+  { "id": "2", "isim": "Uğur Can", "email": "ugur@gmail.com" },
+  { "id": "3", "isim": "İzzet Tamer", "email": "izzet@gmail.com" },
+  { "id": "4", "isim": "İsmet Anlar", "email": "ismet@gmail.com" },
+  {
+    "id": "55f75ab8-71c0-4a1e-977c-afce66c1d01e",
+    "isim": "selin",
+    "email": "selin@gmail.com"
+  },
+  {
+    "id": "695f66bd-0519-48d4-b2fb-3ab3b1a9bb09",
+    "isim": "berke",
+    "email": "berke@gmail.com"
+  }
+]
