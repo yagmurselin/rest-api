@@ -22,7 +22,12 @@ const server = http.createServer((req, res) => {
     const id = req.url.split("/")[3];
     getKullanici(req, res, id);
   } else if (req.url === "/api/kullanici" && req.method === "POST") {
-    createKullanici(req, res);
+    createllanici(req, res);
+  } else if (
+    req.url.match(/\/api\/kullanici\/([0-9]+)/) &&
+    req.method === "PUT"
+  ) {
+    const id = req.url.split("/")[3];
   } else {
     res.writeHead(404, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ message: "Yönlendirme geçersiz" }));
