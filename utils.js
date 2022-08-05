@@ -1,5 +1,6 @@
 const { errorMonitor } = require("events");
 const fs = require("fs");
+var qs = require("querystring");
 
 function dosyayaYaz(dosyaAd, icerik) {
   fs.writeFileSync(dosyaAd, JSON.stringify(icerik), "utf-8", (err) => {
@@ -12,8 +13,8 @@ function getPostData(req) {
   return new Promise((resolve, reject) => {
     try {
       let body = "";
-      req.on("data", (chunk) => {
-        chunk += chunk.toString();
+      req.on("data", (data) => {
+        body += data.toString();
       });
       req.on("end", () => {
         resolve(body);

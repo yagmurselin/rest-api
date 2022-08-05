@@ -15,6 +15,7 @@ function findByID(id) {
 
 function create(kullanici) {
   return new Promise((resolve, reject) => {
+    console.info(kullanici);
     const yeni = { id: uuidv4(), ...kullanici };
     kullanicilar.push(yeni);
     dosyayaYaz("./data/kullaniciDB.json", kullanicilar);
