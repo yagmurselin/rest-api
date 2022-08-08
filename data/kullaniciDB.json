@@ -1,16 +1,1 @@
-[
-  { "id": "1", "isim": "Ali Osman Hazır", "email": "aos@gmail.com" },
-  { "id": "2", "isim": "Uğur Can", "email": "ugur@gmail.com" },
-  { "id": "3", "isim": "İzzet Tamer", "email": "izzet@gmail.com" },
-  { "id": "4", "isim": "İsmet Anlar", "email": "ismet@gmail.com" },
-  {
-    "id": "55f75ab8-71c0-4a1e-977c-afce66c1d01e",
-    "isim": "selin",
-    "email": "selin@gmail.com"
-  },
-  {
-    "id": "695f66bd-0519-48d4-b2fb-3ab3b1a9bb09",
-    "isim": "berke",
-    "email": "berke@gmail.com"
-  }
-]
+[{"id":"1","isim":"Ali Osman Hazır","email":"aos@gmail.com"},{"id":"2","isim":"Uğur Can","email":"ugur@gmail.com"},{"id":"3","isim":"İzzet Tamer","email":"izzet@gmail.com"},{"id":"4","isim":"İsmet Anlar","email":"ismet@gmail.com"},{"id":"55f75ab8-71c0-4a1e-977c-afce66c1d01e","isim":"selin","email":"selin@gmail.com"},{"id":"695f66bd-0519-48d4-b2fb-3ab3b1a9bb09","isim":"berke","email":"berke@gmail.com"},{"id":"5c8ef457-7590-4b91-bd7a-7d4023314bc9","isim":"ai","email":"ai@gmail.com"}]
