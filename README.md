@@ -1,2 +1,3 @@
 # rest-api 
-Nodemon Postman ile REST-APİ gerçeklenmesi.
+implementing delete, push,post, put functions via Nodemon Postman 
+#react #javascript
