@@ -1,4 +1,4 @@
-var Kullanici = require("../models/kullaniciModel");
+var Kullanici = require("../models/kullaniciModel"); //kullaniciModel'den fonksiyonları kulanabilmel için import  ediyoruz.
 const { getPostData } = require("../utils");
 
 async function getKullanicilar(req, res) {
@@ -26,19 +26,27 @@ async function getKullanici(req, res, id) {
     console.log(error);
   }
 }
+function check(id) {
+  if ((id = getElementByid("kullanici").innerHTML = kullanici)) {
+    return console.log("Kullanıcı zaten var");
+  }
+}
+
 async function createKullanici(req, res) {
   try {
-    const body = await getPostData(req);
-    const { isim, email } = JSON.parse(body);
+    const body = await getPostData(req); //kullanıcıyı oluşturmak için gerekli olan bilgileri body değişkenine atıyoruz.
+    const { isim, email, id } = JSON.parse(body);
     const kullanici = {
       isim,
       email,
+      id, //kullanıcıyı oluşturmak için gerekli olan bilgileri kullanici değişkenine atıyoruz.
     };
     const yeniKullanici = await Kullanici.create(kullanici);
     res.writeHead(201, { "Content-Type": "application/json" });
     return res.end(JSON.stringify(yeniKullanici));
-  } catch (error) {
-    console.log(error);
+    //kullanıcıyı oluşturduk ve 201 hatası döndürdük.
+  } catch (check) {
+    console.log(check);
   }
 }
 
@@ -66,20 +74,20 @@ async function updateKullanici(req, res, id) {
   }
 }
 
-async function deleteKullanici(req, res, id) {
+async function deleteKullanici(res, id) {
   try {
-    const kullanici = await Kullanici.findByID(id);
+    const kullanici = await Kullanici.findByID(id); //silebilmek için kullanıcıyı id key'i ile bulmayı gerçekleştiriyoruz.
 
     if (!kullanici) {
       res.writeHead(404, { "Content-Type": "application/json" });
-      res.end(JSON.stringify({ message: "Kullanıcı bulunamadı" }));
+      res.end(JSON.stringify({ message: "Kullanıcı bulunamadı" })); //kullanıcı bulunamadıysa 404 hatası döndürüyoruz.
     } else {
       await Kullanici.remove(id);
-      res.writeHead(200, { "Content-Type": "application/json" });
+      res.writeHead(200, { "Content-Type": "application/json" }); //kullanıcıyı sildikten sonra 200 hatası döndürüyoruz.
       res.end(JSON.stringify({ mesaj: `Kullanici id=${id} silindi` }));
     }
   } catch (error) {
-    console.log(error);
+    console.log(error); //hata varsa console'a yazdırıyoruz.
   }
 }
 
@@ -88,5 +96,6 @@ module.exports = {
   getKullanici,
   createKullanici,
   updateKullanici,
-  deleteKullanici,
+  deleteKullanici, //ürettiğimiz fonksiyonları exportluyoruz ki kullanabilelim.
+  check,
 };
